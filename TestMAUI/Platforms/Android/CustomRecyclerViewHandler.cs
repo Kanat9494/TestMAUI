@@ -21,7 +21,7 @@ public class CustomRecyclerViewHandler : ViewHandler<CustomRecyclerView, Recycle
     {
         Context context = MauiApplication.Current.ApplicationContext;
         var recyclerView = new RecyclerView(context);
-        recyclerView.SetLayoutManager(new LinearLayoutManager(context));
+        recyclerView.SetLayoutManager(new GridLayoutManager(context, 2));
 
         if (VirtualView.Items != null)
         {
