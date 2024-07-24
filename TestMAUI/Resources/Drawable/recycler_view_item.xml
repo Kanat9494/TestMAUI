@@ -128,7 +128,6 @@
                 android:id="@+id/productPublishedDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Publication Date: 01-01-2023"
                 android:textSize="18sp"
 				android:textStyle="bold"/>
 
