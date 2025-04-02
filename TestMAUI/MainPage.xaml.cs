@@ -8,8 +8,15 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
 
-        BindingContext = new MainViewModel();
+        BindingContext = _viewModel = new MainViewModel();
+
+        _viewModel.InitializeProducts();
+
+        //Task.Run(async () =>
+        //{
+        //    await _viewModel.InitializeProducts();
+        //});
     }
 
-    
+    MainViewModel _viewModel;
 }

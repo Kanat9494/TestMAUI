@@ -59,13 +59,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Drawable\circular_shape.xml" />
+	  <None Remove="Resources\Drawable\circular_shape_red.xml" />
 	  <None Remove="Resources\Drawable\product_recycler_view.xml" />
 	  <None Remove="Resources\Drawable\recycler_view_item.xml" />
+	  <None Remove="Resources\Drawable\user.png" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Include="Resources\Drawable\circular_shape.xml" />
+	  <AndroidResource Include="Resources\Drawable\circular_shape_red.xml" />
 	  <AndroidResource Include="Resources\Drawable\product_recycler_view.xml" />
 	  <AndroidResource Include="Resources\Drawable\recycler_view_item.xml" />
+	  <AndroidResource Include="Resources\Drawable\user.png" />
 	</ItemGroup>
 
 	<ItemGroup>

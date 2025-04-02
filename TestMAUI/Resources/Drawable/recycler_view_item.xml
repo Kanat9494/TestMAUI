@@ -1,4 +1,4 @@
-﻿<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+﻿<!--<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -6,79 +6,10 @@
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true">
 
-	<!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-		<ImageView
-            android:id="@+id/productImage"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:scaleType="centerCrop"
-            android:padding="8dp"
-            android:contentDescription="description" />
-
-		<LinearLayout
-            android:layout_width="@dimen/m3_sys_elevation_level0"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.7"
-            android:orientation="vertical"
-            android:padding="8dp">
-
-			<TextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Product Name"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-
-			<TextView
-                android:id="@+id/productDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Price: $100"
-                android:textSize="14sp"/>
-
-			<TextView
-                android:id="@+id/productPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Description"
-                android:textSize="14sp"/>
-
-			<TextView
-                android:id="@+id/productPublishedDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Publication Date: 01-01-2023"
-                android:textSize="14sp"/>
-		</LinearLayout>
-	</LinearLayout>-->
 	<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-		<!--<androidx.cardview.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-			>
-
-			<ImageView
-				android:id="@+id/productImage"
-				android:layout_width="match_parent"
-				android:layout_height="200dp"
-				android:scaleType="centerCrop"
-				android:padding="0dp"
-				android:contentDescription="description"
-				android:background="@drawable/rounded_corners" />  
-		</androidx.cardview.widget.CardView>-->
 
 		<androidx.cardview.widget.CardView
 			android:layout_width="match_parent"
@@ -139,5 +70,122 @@
                 android:textSize="18sp"
 				android:textStyle="bold"/>
 		</LinearLayout>
+	</LinearLayout>
+</androidx.cardview.widget.CardView>-->
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+								   xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/white"
+	android:padding="3dp"
+	android:layout_marginStart="8dp"
+	android:layout_marginEnd="8dp"
+								   card_view:cardElevation="0dp"
+								   
+	>
+
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+		<androidx.cardview.widget.CardView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+	card_view:cardElevation="0dp"
+    app:cardCornerRadius="25dp">
+
+			<ImageView
+				android:id="@+id/productImage"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:layout_gravity="center"
+				android:src="@drawable/user"
+			android:scaleType="centerCrop"
+			android:contentDescription="Product Avatar"
+			android:layout_alignParentStart="true"
+			android:layout_centerVertical="true" />
+
+		</androidx.cardview.widget.CardView>
+		
+
+		<LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+			<TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Product Name"  
+			android:textSize="16sp"
+			android:textStyle="bold"
+			android:textColor="#000000"
+				android:layout_marginStart="10dp"
+				android:layout_marginBottom="10dp"/>
+
+			<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+				<TextView
+					android:id="@+id/title2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Product Name"
+					android:textSize="13sp"
+					android:textColor="#000000"
+					android:layout_marginStart="10dp"
+					android:layout_marginEnd="10dp"/>
+
+				<!-- Описание продукта (productDescription) -->
+				<TextView
+					android:id="@+id/productDescription"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Last message content"
+					android:textSize="13sp"
+					android:textColor="#757575"
+					android:maxLines="1"
+					android:ellipsize="end"
+					android:layout_marginStart="10dp"
+        />
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<TextView
+            android:id="@+id/productPublishedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01-01-2023"  
+		android:textSize="12sp"
+		android:textColor="#757575"
+		android:gravity="end"/>
+
+		<TextView
+            android:id="@+id/unreadMessagesCount"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="3"  
+		android:textSize="14sp"
+		android:textColor="#ffffff"
+		android:background="@drawable/circular_shape_red" 
+		android:visibility="gone"  
+		android:layout_alignParentEnd="true"
+		android:layout_centerVertical="true"/>
+
 	</LinearLayout>
 </androidx.cardview.widget.CardView>

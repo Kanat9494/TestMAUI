@@ -21,7 +21,8 @@ public class CustomRecyclerViewHandler : ViewHandler<CustomRecyclerView, Recycle
     {
         Context context = MauiApplication.Current.ApplicationContext;
         var recyclerView = new RecyclerView(context);
-        recyclerView.SetLayoutManager(new GridLayoutManager(context, 2));
+        recyclerView.SetLayoutManager(new LinearLayoutManager(context));
+        recyclerView.AddItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.Vertical));
 
         if (VirtualView.Items != null)
         {
@@ -47,7 +48,18 @@ public class CustomRecyclerViewHandler : ViewHandler<CustomRecyclerView, Recycle
     {
         if (customRecyclerView.Items != null && handler.PlatformView != null)
         {
-            handler.PlatformView.SetAdapter(new CustomRecyclerViewAdapter(new List<ProductResponse>(customRecyclerView.Items)));
+            var adapter = handler.PlatformView.GetAdapter() as CustomRecyclerViewAdapter;
+
+            if (adapter != null)
+            {
+                // Обновляем данные адаптера без пересоздания
+                adapter.UpdateData(customRecyclerView.Items);
+            }
+            else
+            {
+                // Создаем новый адаптер, если он еще не установлен
+                handler.PlatformView.SetAdapter(new CustomRecyclerViewAdapter(customRecyclerView.Items.ToList()));
+            }
         }
     }
 }

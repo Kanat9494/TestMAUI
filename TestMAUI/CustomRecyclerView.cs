@@ -1,4 +1,6 @@
-﻿namespace TestMAUI;
+﻿using System.Collections.Specialized;
+
+namespace TestMAUI;
 
 public class CustomRecyclerView : View
 {
@@ -13,5 +15,26 @@ public class CustomRecyclerView : View
 
     private static void OnItemsChanged(BindableObject bindable, object oldValue, object newValue)
     {
+        //if (bindable is CustomRecyclerView customRecyclerView)
+        //{
+        //    if (oldValue is ObservableCollection<ProductResponse> oldCollection)
+        //    {
+        //        oldCollection.CollectionChanged -= customRecyclerView.OnCollectionChanged;
+        //    }
+
+        //    if (newValue is ObservableCollection<ProductResponse> newCollection)
+        //    {
+        //        newCollection.CollectionChanged += customRecyclerView.OnCollectionChanged;
+        //    }
+
+        //    // Обновляем UI при смене всей коллекции
+        //    customRecyclerView.Handler?.UpdateValue(nameof(Items));
+        //}
+    }
+
+    private void OnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+    {
+        // Обновляем платформенный элемент при изменении списка
+        Handler?.UpdateValue(nameof(Items));
     }
 }
